@@ -33,3 +33,17 @@ Page: .dx-page get text, IF class is present, find the highest number. Make page
 ## Download all docs by clicking all links
 [Download ALL Stackoverflow](https://stackoverflow.com/questions/71562884/scrapy-playwright-click-and-loop-through-virtual-javascript-page)
  
+## Environment
+to be run in conda activate lxws
+
+## Scrapy_playwright adjustments
+To settings.py add following lines:
+
+DOWNLOAD_HANDLERS = {
+    "http": "scrapy_playwright.handler.ScrapyPlaywrightDownloadHandler",
+    "https": "scrapy_playwright.handler.ScrapyPlaywrightDownloadHandler",
+}
+
+TWISTED_REACTOR = "twisted.internet.asyncioreactor.AsyncioSelectorReactor"
+
+PLAYWRIGHT_LAUNCH_OPTIONS = {"headless": False}
