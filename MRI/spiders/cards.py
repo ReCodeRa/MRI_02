@@ -1,7 +1,5 @@
 import scrapy
-import json
 
-keys = json.load("ProductKeys.json")
 
 class CardsSpider(scrapy.Spider):
     name = 'cards'
