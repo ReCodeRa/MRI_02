@@ -14,14 +14,16 @@ class CardsSpider(scrapy.Spider):
                 playwright=True,
                 playwright_include_page=True,
                 playwright_page_methods= [
-                    PageMethod('click', 'button[mattooltip="Download as excel file"]'),
                     PageMethod('expect_download'),
+                    PageMethod('click', 'button[mattooltip="Download as excel file"]'),
+                    
                     ]
             )
         )
     
 
     def parse(self, response):
-        pass
+        yield {'text': response.text}
+
 
 #<mat-list _ngcontent-ng-cli-universal-c124="" role="list" class="mat-list mat-list-base documents-list"><!----></mat-list>

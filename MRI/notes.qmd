@@ -47,3 +47,7 @@ DOWNLOAD_HANDLERS = {
 TWISTED_REACTOR = "twisted.internet.asyncioreactor.AsyncioSelectorReactor"
 
 PLAYWRIGHT_LAUNCH_OPTIONS = {"headless": False}
+
+## Playwright PageMethods
+[Page methods](https://playwright.dev/python/docs/api/class-page)
+
