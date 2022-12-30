@@ -19,7 +19,7 @@ class CardsSpider(scrapy.Spider):
                     PageMethod('expect_download'),
                     ]
             )
-            )
+        )
     
 
     def parse(self, response):
