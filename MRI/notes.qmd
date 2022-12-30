@@ -1,0 +1,35 @@
+## Item classes
+### Search page
+Full text search URI: https://mri.cts-mrp.eu/portal/fulltext-search
+Search Field: input#mat-input-2
+Exe button: button[mattooltip="Execute query"]
+
+### Results page
+Full text search URI: https://mri.cts-mrp.eu/portal/fulltext-search
+Result items: td.dx-cell-focus-disabled need to extract text
+1000 per page: .dx-page-size
+Page: .dx-page get text, IF class is present, find the highest number. Make pages FOR pg in RANGE(0:HighestNumber): ...  
+
+<div class="dx-page-size" tabindex="0" role="button" aria-label="Display 1000 items on page">1000</div>
+
+## Follow tutorials
+[JWR](https://www.youtube.com/watch?v=0wO7K-SoUHM&ab_channel=JohnWatsonRooney)
+
+[ScrapeOPs](https://www.google.com/search?q=scrapeops+scrapy-playwright&oq=scrapeops+scrapy-playwright&aqs=chrome..69i57j69i60j69i61j69i60.16522j1j7&sourceid=chrome&ie=UTF-8#fpstate=ive&vld=cid:bf6cead1,vid:EijzO7n2-dg)
+
+[WSL in VS code](https://code.visualstudio.com/docs/remote/wsl-tutorial)
+
+## Procedure
+    - load page
+    - fill "Search Field" with term
+    - click on Execute button
+    - wait until items are available
+    - click on "1000" button
+    - yield ProductKey
+
+## Cards Spider
+[card url](https://mri.cts-mrp.eu/portal/details?productnumber=UK/H/5182/001)
+
+## Download all docs by clicking all links
+[Download ALL Stackoverflow](https://stackoverflow.com/questions/71562884/scrapy-playwright-click-and-loop-through-virtual-javascript-page)
+ 
