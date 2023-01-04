@@ -13,7 +13,7 @@ def main():
         with page.expect_download() as download_info:
             page.get_by_text("Download excel").click()
         download = download_info.value
-        download.save_as(f"{key}/{key}.xlsx")    
+        download.save_as(f"res/{key}/{key}.xlsx")    
        
         # Selector for document download buttons: .mat-button-base.ng-star-inserted
        
