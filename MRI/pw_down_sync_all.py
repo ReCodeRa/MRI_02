@@ -16,6 +16,14 @@ def main():
         download.save_as(f"res/{key}/{key}.xlsx")    
        
         # Selector for document download buttons: .mat-button-base.ng-star-inserted
-       
+        handles = page.query_selector_all(".mat-button-base.ng-star-inserted")
+
+        for handle in handles:
+            with page.expect_download() as download_info:
+                handle.query_selector("button[mattooltip='Download']").click()
+            download = download_info.value
+            doc_name = download.suggested_filename
+            download.save_as(f"res/{key}/{doc_name}.pdf")
+    
         browser.close()
 main()
