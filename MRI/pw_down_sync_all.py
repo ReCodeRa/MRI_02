@@ -2,18 +2,18 @@ from playwright.sync_api import sync_playwright
 from pathlib import Path
 import os
 
-key = "4046"
+key = "2055"
 os.makedirs(f"res/{key}", exist_ok=True)
 
 path = Path().home() / 'Downloads'
-timeout = 3000                  # 3s timeout
+timeout = 30 * 1000                  #  timeout
 
 def main():
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=False)
         context = browser.new_context()
         page = context.new_page()
-        page.goto("https://mri.cts-mrp.eu/portal/details?productnumber=NL/H/4046/001", timeout=timeout)
+        page.goto("https://mri.cts-mrp.eu/portal/details?productnumber=SE/H/2055/001", timeout=timeout)
         
         
         with page.expect_download() as download_info:
