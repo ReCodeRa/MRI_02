@@ -1,7 +1,12 @@
 import os
 from playwright.sync_api import sync_playwright
 
-key = "5163"
+text = "NO/H/0279/003"
+sp = text.split('/')
+key = sp[2]
+
+
+# key = "5163"
 os.makedirs(key, exist_ok=True)
 
 def main():
