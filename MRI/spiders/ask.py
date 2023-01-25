@@ -1,7 +1,7 @@
 import scrapy
 from scrapy_playwright.page import PageMethod
 
-term = "loperamide"
+term = "dasatinib"
 
 class AskSpider(scrapy.Spider):
     name = 'ask'
@@ -18,13 +18,7 @@ class AskSpider(scrapy.Spider):
                 PageMethod('wait_for_selector', 'input#mat-input-2'),
                 PageMethod('fill', 'input#mat-input-2', term),
                 PageMethod('click', 'button[mattooltip="Execute query"]'),
-                #PageMethod('wait_for_selector', 'div.dx-page-sizes'),
-                #PageMethod('wait_for_selector', f'div.dx-page-sizes:nth-child(5)'),
-                #PageMethod('get_by_role', 'button', 'name="Display 1000 items on page', 'click()'),
-                #PageMethod('click', 'button[aria-label="Display 1000 items on page"]'),
-                #PageMethod('click', f'button[aria-label]::="Display 1000 items on page"]'),
                 PageMethod('click', f'div[aria-label="Display 1000 items on page"]'),
-                #PageMethod('wait_for_load_state'),
                 PageMethod('wait_for_timeout', 10000)
                 ]
         )

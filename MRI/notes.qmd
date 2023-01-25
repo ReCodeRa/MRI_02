@@ -27,6 +27,13 @@ Page: .dx-page get text, IF class is present, find the highest number. Make page
     - click on "1000" button
     - yield ProductKey
 
+## Step-by-step with new molecule
+    - remove excessive files
+    - set "term" in spiders - ask.py
+    - Terminal: scrapy crawl ask -O ProductKeys.json
+    - Convert json to lsKey using Key_iter.py
+    - 
+
 ## Cards Spider
 [card url](https://mri.cts-mrp.eu/portal/details?productnumber=UK/H/5182/001)
 

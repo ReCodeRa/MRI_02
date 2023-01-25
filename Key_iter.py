@@ -1,5 +1,5 @@
 import json
-fileObject = open("./MRI/ProductKeys.json", "r")
+fileObject = open("./ProductKeys.json", "r")
 jsonContent = fileObject.read()
 keys = json.loads(jsonContent)
 fileObject.close()
