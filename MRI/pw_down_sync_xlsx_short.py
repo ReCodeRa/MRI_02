@@ -8,24 +8,28 @@ df = pd.read_csv('lsIDs.csv', delimiter=',')
 lsls = [list(row) for row in df.values]
 lsIDs = list(chain.from_iterable(lsls))
 print(lsIDs[0:3])
-  
-# printing the data
-print(data_into_list)
-my_file.close()
 
-
-# key = "5163"
-os.makedirs(key, exist_ok=True)
-
-def main():
+def main(key):
+    id_uds = key.replace('/', '_')
+    os.makedirs(id_uds, exist_ok=True)
+   
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=False)
         page = browser.new_page()
-        page.goto("https://mri.cts-mrp.eu/portal/details?productnumber=NL/H/5163/001")
+        page.goto(f"https://mri.cts-mrp.eu/portal/details?productnumber={key}")
         
         with page.expect_download() as download_info:
             page.get_by_text("Download excel").click()
         download = download_info.value
         download.save_as(f"{key}/{key}.xlsx")    
         browser.close()
-main()
+    
+  
+# printing the data
+print(data_into_list)
+my_file.close()
+for id in lsIDs:
+     main(key=id)
+
+
+    
