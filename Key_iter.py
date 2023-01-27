@@ -6,14 +6,17 @@ jsonContent = fileObject.read()
 keys = json.loads(jsonContent)
 fileObject.close()
 lsKeys = [d['ProductKey'] for d in keys]
-print(lsKeys[0:3])
 
-# Split keys, extract number, save to .csv
+with open(r'lsIDs_slash.txt', 'w') as fp:
+    fp.write('\n'.join(lsKeys))
+print("lsIDs_slash.txt written")
+
+# IDkeys with underscore
 lsIDs = []
 for k in lsKeys:
     sp = k.replace('/','_')
-    print(sp)
     lsIDs.append(sp)
 
-with open(r'lsIDs.txt', 'w') as fp:
+with open(r'lsIDs_uds.txt', 'w') as fp:
     fp.write('\n'.join(lsIDs))
+print("lsIDs_uds.txt written")

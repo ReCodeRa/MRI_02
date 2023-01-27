@@ -1,9 +1,6 @@
 import os
 from playwright.sync_api import sync_playwright
 
-
-
-
 # key = "5163"
 os.makedirs(key, exist_ok=True)
 
