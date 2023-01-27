@@ -32,7 +32,7 @@ import glob
 from os import getcwd
 print(getcwd())
 # WRONG!!!
-xl_path = "./MRI/res"
+xl_path = f"{getcwd()}/MRI/res"
 file_list = glob.glob(xl_path + "/*/*.xlsx")
 print(file_list)
 
@@ -44,4 +44,6 @@ for xl_file in file_list:
  
 xl_merged.to_excel('res.xlsx', index=False)
 print(f'Resulting file written to: {getcwd()}')
+
+/home/recodera/MRI_dasa/MRI_02/res/NL_H_4002_001/NL_H_4002_001.xlsx
     
