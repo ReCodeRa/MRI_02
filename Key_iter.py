@@ -11,9 +11,9 @@ print(lsKeys[0:3])
 # Split keys, extract number, save to .csv
 lsIDs = []
 for k in lsKeys:
-    sp = k.split('/')
+    sp = k.replace('/','_')
     print(sp)
-    lsIDs.append(sp[2])
+    lsIDs.append(sp)
 
 with open(r'lsIDs.txt', 'w') as fp:
     fp.write('\n'.join(lsIDs))
