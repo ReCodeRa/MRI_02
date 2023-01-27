@@ -1,9 +1,7 @@
 import os
 from playwright.sync_api import sync_playwright
 
-text = "NO/H/0279/003"
-sp = text.split('/')
-key = sp[2]
+
 
 
 # key = "5163"
