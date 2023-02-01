@@ -31,7 +31,7 @@ import pandas as pd
 import glob
 from os import getcwd
 print(getcwd())
-# WRONG!!!
+
 xl_path = f"{getcwd()}/res"
 file_list = glob.glob(xl_path + "/*/*.xlsx")
 print(file_list)
