@@ -27,5 +27,3 @@ def pdf_tab_id(file):
     jsonFile.close()
 
 pdf_tab_id(file)
-
-pathlib.Path.
