@@ -63,6 +63,7 @@ print(f'Resulting file written to: {os.getcwd()}')
 # Add PK table id to each pdf source folder
 # CONTINUE HERE by IF PAR exits then calculate the pdf_tab_id
 # file = "/home/recodera/MRI_dasa/MRI_02/Loper/Loper/LosiActa.pdf"
+xl_path = "/home/recodera/MRI_dasa/MRI_02/Loper/Loper"
 
 def pdf_tab_id(file):
     from tabula import read_pdf
@@ -84,13 +85,17 @@ def pdf_tab_id(file):
             s = f.read()
         dec = re.findall(r, s)
         ls_id.append(dec)
+        print(ls_id)
 
     js_str = json.dumps(ls_id)
     jsonFile = open(f"{fce_path}/id.json", "w")
     jsonFile.write(js_str)
     jsonFile.close()
 
-pdf_file_list = glob.glob(xl_path + "/*/*PAR.pdf")
+#pdf_file_list = glob.glob(xl_path + "/*/*PAR.pdf")
+pdf_file_list = glob.glob(f'{xl_path}/*/*.pdf')
+print(pdf_file_list)
+print(xl_path)
 
 for file in pdf_file_list:
     pdf_tab_id(file)
