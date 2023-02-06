@@ -1,2 +1,31 @@
-,Scope,Procedurenumber,Type ofmodification,Date of startof theprocedure,Date ofend of theprocedure,Approval/nonapproval,Assessmentreportattached
-0,,,,,,,
+,Procedure,Scope,Product,Date of,Approval/,Summary/ Justification
+0,number*,,Informatio,end of,non approval,for refuse
+1,,,n affected,procedure,,
+2,NL/H/4002,Change in the name,--,21-10-,Approval,--
+3,/IB/001/G,of the medicinal,,2018,,
+4,,"product in NL, BE, DE,",,,,
+5,,"FR, IT, PL, SK, due to",,,,
+6,,the upcoming,,,,
+7,,transfer of,,,,
+8,,ownership.,,,,
+9,,Introduction of the,,,,
+10,,summary of,,,,
+11,,Pharmacovigilance,,,,
+12,,System Master File,,,,
+13,,(sPSMF) of the new,,,,
+14,,MAH in all countries.,,,,
+15,NL/H/4002,Change the product,--,22-2-2019,Approval,--
+16,/IB/002,"name in BG, HU, LV,",,,,
+17,,SI and the UK from,,,,
+18,,Dasatinib PharOS to,,,,
+19,,Dasatinib Sandoz.,,,,
+20,NL/H/4002,Repeat use,--,7-5-2019,Approval,--
+21,/E/001,procedure to register,,,,
+22,,the product in,,,,
+23,,"Austria, Czech",,,,
+24,,"Republic, Denmark,",,,,
+25,,"Estonia, Croatia and",,,,
+26,,Norway.,,,,
+27,NL/H/4002,Addition of,--,3-6-2019,Approval,--
+28,/IA/003,secondary packaging,,,,
+29,,site.,,,,

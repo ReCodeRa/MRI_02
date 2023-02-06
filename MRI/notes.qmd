@@ -35,7 +35,9 @@ Page: .dx-page get text, IF class is present, find the highest number. Make page
     - Load lsIDs to module pw_down_merge.py
     - Download all file using down_merge_all.py
     - Results are in MRI_02/res.xlsx
-    - 
+    - pdf_tab_id added to each *PAR.pdf
+    - Problems if tabs as PICs
+    - Comparison to be added
 
 ## Cards Spider
 [card url](https://mri.cts-mrp.eu/portal/details?productnumber=UK/H/5182/001)

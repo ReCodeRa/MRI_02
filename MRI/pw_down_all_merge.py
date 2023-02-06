@@ -61,8 +61,8 @@ xl_merged.to_excel('res.xlsx', index=False)
 print(f'Resulting file written to: {os.getcwd()}')
 
 # Add PK table id to each pdf source folder
-# CONTINUE HERE by IF PAR exits than
-file = "/home/recodera/MRI_dasa/MRI_02/Loper/Loper/LosiActa.pdf"
+# CONTINUE HERE by IF PAR exits then calculate the pdf_tab_id
+# file = "/home/recodera/MRI_dasa/MRI_02/Loper/Loper/LosiActa.pdf"
 
 def pdf_tab_id(file):
     from tabula import read_pdf
@@ -90,4 +90,7 @@ def pdf_tab_id(file):
     jsonFile.write(js_str)
     jsonFile.close()
 
-pdf_tab_id(file)
+pdf_file_list = glob.glob(xl_path + "/*/*PAR.pdf")
+
+for file in pdf_file_list:
+    pdf_tab_id(file)
