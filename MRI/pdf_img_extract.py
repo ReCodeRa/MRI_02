@@ -1,4 +1,8 @@
 # Extract images from pdf and text from images
+# Install packages
+python -m pip install --upgrade pip
+python -m pip install --upgrade pymupdf
+
 # STEP 1
 # import libraries
 import fitz
@@ -7,7 +11,7 @@ from PIL import Image
  
 # STEP 2
 # file path you want to extract images from
-file = "/content/pdf_file.pdf"
+file = "/workspaces/MRI_02/MRI/tab_img.pdf"
  
 # open the file
 pdf_file = fitz.open(file)
@@ -18,7 +22,10 @@ for page_index in range(len(pdf_file)):
  
     # get the page itself
     page = pdf_file[page_index]
-    image_list = page.getImageList()
+    # image_list = page.getImageList()
+    image_list = page.get_images()
+  
+ # CONTINUE HERE
  
     # printing number of images found in this page
     if image_list:
