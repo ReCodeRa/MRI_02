@@ -33,13 +33,13 @@ for page_index in range(len(pdf_file)):
             f"[+] Found a total of {len(image_list)} images in page {page_index}")
     else:
         print("[!] No images found on page", page_index)
-    for image_index, img in enumerate(page.getImageList(), start=1):
+    for image_index, img in enumerate(page.get_images(), start=1):
  
         # get the XREF of the image
         xref = img[0]
  
         # extract the image bytes
-        base_image = pdf_file.extractImage(xref)
+        base_image = pdf_file.extract_image(xref)
         image_bytes = base_image["image"]
       
 # Extract text from image
