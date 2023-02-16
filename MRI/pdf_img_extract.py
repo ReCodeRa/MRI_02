@@ -46,11 +46,12 @@ for page_index in range(len(pdf_file)):
 # Install tesseract into the Ubuntu container
 # sudo apt update
 # sudo apt-get install Tesseract-ocr
-
+# pip install pytesseract
 
 from PIL import Image
 from pytesseract import pytesseract
-  
+
+# Find were installed:   find . -name "tesseract*"
 # Defining paths to tesseract.exe
 # and the image we would be using
 path_to_tesseract = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
