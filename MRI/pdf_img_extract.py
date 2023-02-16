@@ -43,6 +43,11 @@ for page_index in range(len(pdf_file)):
         image_bytes = base_image["image"]
       
 # Extract text from image
+# Install tesseract into the Ubuntu container
+# sudo apt update
+# sudo apt-get install Tesseract-ocr
+
+
 from PIL import Image
 from pytesseract import pytesseract
   
