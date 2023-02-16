@@ -33,19 +33,29 @@ for page_index in range(len(pdf_file)):
             f"[+] Found a total of {len(image_list)} images in page {page_index}")
     else:
         print("[!] No images found on page", page_index)
+
     for image_index, img in enumerate(page.get_images(), start=1):
- 
+
         # get the XREF of the image
         xref = img[0]
- 
+
         # extract the image bytes
         base_image = pdf_file.extract_image(xref)
+        print(base_image)
         image_bytes = base_image["image"]
-      
+        # get the image extension
+        image_ext = base_image["ext"]
+        # load it to PIL
+        image = Image.open(io.BytesIO(image_bytes))
+        # save it to local disk
+        image.save(open(f"image{page_index+1}_{image_index}.{image_ext}", "wb"))
+
+    
 # Extract text from image
 # Install tesseract into the Ubuntu container
 # sudo apt update
-# sudo apt-get install Tesseract-ocr
+# sudo apt install tesseract-ocr
+# sudo apt install libtesseract-dev
 # pip install pytesseract
 
 from PIL import Image
@@ -54,8 +64,8 @@ from pytesseract import pytesseract
 # Find were installed:   find . -name "tesseract*"
 # Defining paths to tesseract.exe
 # and the image we would be using
-path_to_tesseract = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
-image_path = r"csv\sample_text.png"
+path_to_tesseract = "/usr/share/tesseract-ocr/4.00/tessdata"
+image_path = "/workspaces/MRI_02/MRI"
   
 # Opening the image & storing it in an image object
 img = Image.open(image_path)
@@ -71,5 +81,3 @@ text = pytesseract.image_to_string(img)
 # Displaying the extracted text
 print(text[:-1])
  
-        # get the image extension
-        image_ext = base_image["ext"]
