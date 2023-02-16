@@ -1,7 +1,7 @@
 # Extract images from pdf and text from images
 # Install packages
-python -m pip install --upgrade pip
-python -m pip install --upgrade pymupdf
+# python -m pip install --upgrade pip
+# python -m pip install --upgrade pymupdf
 
 # STEP 1
 # import libraries
@@ -19,18 +19,14 @@ pdf_file = fitz.open(file)
 # STEP 3
 # iterate over PDF pages
 for page_index in range(len(pdf_file)):
- 
     # get the page itself
     page = pdf_file[page_index]
     # image_list = page.getImageList()
     image_list = page.get_images()
-  
- # CONTINUE HERE
- 
+
     # printing number of images found in this page
     if image_list:
-        print(
-            f"[+] Found a total of {len(image_list)} images in page {page_index}")
+        print(f"[+] Found a total of {len(image_list)} images in page {page_index}")
     else:
         print("[!] No images found on page", page_index)
 
@@ -58,26 +54,26 @@ for page_index in range(len(pdf_file)):
 # sudo apt install libtesseract-dev
 # pip install pytesseract
 
-from PIL import Image
-from pytesseract import pytesseract
+# from PIL import Image
+# from pytesseract import pytesseract
 
-# Find were installed:   find . -name "tesseract*"
-# Defining paths to tesseract.exe
-# and the image we would be using
-path_to_tesseract = "/usr/share/tesseract-ocr/4.00/tessdata"
-image_path = "/workspaces/MRI_02/MRI"
+# # Find were installed:   find . -name "tesseract*"
+# # Defining paths to tesseract.exe
+# # and the image we would be using
+# path_to_tesseract = "/usr/share/tesseract-ocr/4.00/tessdata"
+# image_path = "/workspaces/MRI_02/MRI"
   
-# Opening the image & storing it in an image object
-img = Image.open(image_path)
+# # Opening the image & storing it in an image object
+# img = Image.open(image_path)
   
-# Providing the tesseract executable
-# location to pytesseract library
-pytesseract.tesseract_cmd = path_to_tesseract
+# # Providing the tesseract executable
+# # location to pytesseract library
+# pytesseract.tesseract_cmd = path_to_tesseract
   
-# Passing the image object to image_to_string() function
-# This function will extract the text from the image
-text = pytesseract.image_to_string(img)
+# # Passing the image object to image_to_string() function
+# # This function will extract the text from the image
+# text = pytesseract.image_to_string(img)
   
-# Displaying the extracted text
-print(text[:-1])
+# # Displaying the extracted text
+# print(text[:-1])
  
