@@ -45,7 +45,7 @@ for page_index in range(len(pdf_file)):
 
         # extract the image bytes
         base_image = pdf_file.extract_image(xref)
-        print(base_image)
+        # print(base_image)
         image_bytes = base_image["image"]
         # get the image extension
         image_ext = base_image["ext"]
