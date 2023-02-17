@@ -11,7 +11,8 @@ from PIL import Image
  
 # STEP 2
 # file path you want to extract images from
-file = "/workspaces/MRI_02/MRI/tab_img.pdf"
+# file = "/workspaces/MRI_02/MRI/tab_img.pdf"
+file = "/home/recodera/MRI_ImgText/MRI_02/MRI/tab_img.pdf"
  
 # open the file
 pdf_file = fitz.open(file)
@@ -52,7 +53,10 @@ for page_index in range(len(pdf_file)):
 # sudo apt install tesseract-ocr
 # sudo apt install libtesseract-dev
 # pip install pytesseract
+# pip install PIL
+# pip install Pillow
 
+# from PIL import Image
 from PIL import Image
 from pytesseract import pytesseract
 
@@ -60,14 +64,16 @@ from pytesseract import pytesseract
 # # Defining paths to tesseract.exe
 # # and the image we would be using
 # path_to_tesseract = "/usr/share/tesseract-ocr/4.00/tessdata"
-image_path = "/workspaces/MRI_02/image10_3.png"
+path_to_tesseract = r'/usr/bin/tesseract'
+# image_path = "/workspaces/MRI_02/image10_3.png"
+image_path = "/home/recodera/MRI_ImgText/MRI_02/image10_3.png"
   
 # Opening the image & storing it in an image object
 img = Image.open(image_path)
   
 # Providing the tesseract executable
 # location to pytesseract library
-pytesseract.tesseract_cmd = "/usr/share/tesseract-ocr/4.00/tessdata"
+pytesseract.tesseract_cmd = path_to_tesseract
   
 # Passing the image object to image_to_string() function
 # This function will extract the text from the image
