@@ -45,8 +45,7 @@ for page_index in range(len(pdf_file)):
         image = Image.open(io.BytesIO(image_bytes))
         # save it to local disk
         image.save(open(f"image{page_index+1}_{image_index}.{image_ext}", "wb"))
-
-    
+  
 # Extract text from image
 # Install tesseract into the Ubuntu container
 # sudo apt update
@@ -54,26 +53,25 @@ for page_index in range(len(pdf_file)):
 # sudo apt install libtesseract-dev
 # pip install pytesseract
 
-# from PIL import Image
-# from pytesseract import pytesseract
+from PIL import Image
+from pytesseract import pytesseract
 
 # # Find were installed:   find . -name "tesseract*"
 # # Defining paths to tesseract.exe
 # # and the image we would be using
 # path_to_tesseract = "/usr/share/tesseract-ocr/4.00/tessdata"
-# image_path = "/workspaces/MRI_02/MRI"
+image_path = "/workspaces/MRI_02/image10_3.png"
   
-# # Opening the image & storing it in an image object
-# img = Image.open(image_path)
+# Opening the image & storing it in an image object
+img = Image.open(image_path)
   
-# # Providing the tesseract executable
-# # location to pytesseract library
-# pytesseract.tesseract_cmd = path_to_tesseract
+# Providing the tesseract executable
+# location to pytesseract library
+pytesseract.tesseract_cmd = "/usr/share/tesseract-ocr/4.00/tessdata"
   
-# # Passing the image object to image_to_string() function
-# # This function will extract the text from the image
-# text = pytesseract.image_to_string(img)
+# Passing the image object to image_to_string() function
+# This function will extract the text from the image
+text = pytesseract.image_to_string(img)
   
-# # Displaying the extracted text
-# print(text[:-1])
- 
+# Displaying the extracted text
+print(text[:-1])
