@@ -37,7 +37,9 @@ Page: .dx-page get text, IF class is present, find the highest number. Make page
     - Results are in MRI_02/res.xlsx
     - pdf_tab_id added to each *PAR.pdf
     - Problems if tabs as PICs
-    - Comparison to be added
+    - PICs can be extracted from pdf using pdf_img_extract_v02.py
+    - Comparison BEQ values should be impemented in order to assess dossier similarity
+    - Code should be re-structured to functions and calls
 
 ## Cards Spider
 [card url](https://mri.cts-mrp.eu/portal/details?productnumber=UK/H/5182/001)
