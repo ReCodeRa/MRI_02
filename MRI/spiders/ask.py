@@ -1,7 +1,7 @@
 import scrapy
 from scrapy_playwright.page import PageMethod
 
-term = "loperamide"
+term = "mirtazapin"
 
 class AskSpider(scrapy.Spider):
     name = 'ask'
