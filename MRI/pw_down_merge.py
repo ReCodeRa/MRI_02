@@ -24,7 +24,7 @@ def main(key):
         download.save_as(f"res/{id_uds}/{id_uds}.xlsx")    
         browser.close()
      
-for id in lsIDs[0:9]:
+for id in lsIDs:
      main(key=id)
 
 import pandas as pd

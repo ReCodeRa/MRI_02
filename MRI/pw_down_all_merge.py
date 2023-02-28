@@ -43,7 +43,7 @@ def main(key):
         print("\tDownload acquired...")    
         browser.close()
      
-for id in lsIDs[0:3]:
+for id in lsIDs:
      main(key=id)
 
 # Merge all card .xlsx to result excel db

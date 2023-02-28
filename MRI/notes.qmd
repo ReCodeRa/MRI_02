@@ -31,7 +31,7 @@ Page: .dx-page get text, IF class is present, find the highest number. Make page
     - remove excessive files
     - set "term" in spiders - ask.py
     - Terminal: scrapy crawl ask -O ProductKeys.json
-    - Convert json to lsKey using Key_iter.py -> output list with slashes and underscores
+    - Convert json to lsKey using Key_iter.py -> output list with slashes
     - Load lsIDs to module pw_down_merge.py
     - Download all file using down_merge_all.py
     - Results are in MRI_02/res.xlsx
